@@ -1,0 +1,22 @@
+﻿<br>
+<br>
+<br>
+<h2>Atualizar registro</h2>
+<hr>
+<form action="/cliente/@ViewBag.Cliente.Id/atualizar" method="post">
+	<label>Nome:</label><br>
+	<input type="text" id="Nome" value="@ViewBag.Cliente.Nome" name="Nome" required="required"><br>
+
+	<label for="lname">CPF:</label><br>
+	<input type="text" id="CPF" value="@ViewBag.Cliente.CPF" name="CPF" required="required" maxlength="11"><br>
+
+	<label for="lname">Telefone:</label><br>
+	<input type="text" id="Telefone" value="@ViewBag.Cliente.Telefone" name="Telefone" required="required" maxlength="17"><br>
+
+	<label for="lname">Email:</label><br>
+	<input type="email" id="Email" value="@ViewBag.Cliente.Email" name="Email" required="required"><br><br>
+
+	<input type="submit" class="btn btn-success" value="Salvar">
+</form>
+<hr>
+<a class="btn btn-secondary" href="/#">Voltar</a>

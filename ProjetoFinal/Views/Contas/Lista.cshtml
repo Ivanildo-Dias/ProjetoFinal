@@ -1,0 +1,37 @@
+﻿<br>
+<h2>Lista de contas</h2>
+<br>
+
+<table class="table table-sm table-hover">
+    <tr>
+        <th scope="col">CLIENTE</th>
+        <th scope="col">AGÊNCIA</th>
+        <th scope="col">TIPO</th>
+        <th scope="col">SALDO</th>
+        <th scope="col">Operações</th>
+    </tr>
+
+    @foreach (Conta conta in ViewBag.Contas)
+    {
+        <tr scope="row">
+            <td>@conta.Cliente.Nome</td>
+            <td>@conta.Agencia</td>
+            <td>@conta.TipoString()</td>
+            <td>@conta.Saldo</td>
+            <td>
+                <a class="btn btn-warning" href="/conta/@conta.Id">Editar</a>
+                <a class="btn btn-danger" href="#" onclick="excluir('/conta/@conta.Id/excluir')">Excluir</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a class="btn btn-secondary" href="/#">Voltar</a>
+
+<script>
+    function excluir(url){
+        if (confirm("deseja realmente excluir?")){
+        window.location.href = url
+        }
+    }
+</script>
